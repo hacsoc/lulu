@@ -1,0 +1,32 @@
+{
+  "name":        "hosted-hubot",
+  "version":     "2.4.6",
+  "author":      "GitHub Inc.",
+  "keywords":    "github hubot campfire bot",
+  "description": "A simple helpful Robot for your Company",
+  "licenses":     [{
+    "type":       "MIT",
+    "url":        "http://github.com/github/hubot/raw/master/LICENSE"
+  }],
+
+  "repository" : {
+    "type": "git",
+    "url":  "https://github.com/github/hubot.git"
+  },
+
+  "dependencies": {
+    "hubot": ">=2.4.6",
+    "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
+    "optparse": "1.0.3",
+    "hubot-irc": ">= 0.1.9",
+    "soupselect": ">= 0.2.0",
+    "htmlparser": ">= 1.7.6",
+    "jsdom": ">= 0.2.14",
+    "xml2js": ">= 0"
+  },
+
+  "engines": {
+    "node": ">= 0.8.x",
+    "npm": "1.1.x"
+  }
+}
