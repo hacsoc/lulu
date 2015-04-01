@@ -1,0 +1,9 @@
+while su'd as ircbots
+cd into lulu
+run ./lulu.sh
+
+It might be a good idea to autorun it in crontab or something
+Right now its running inside of a tmux session (type tmr to connect to it)
+
+Deploy:
+`sudo su ircbots`, `cd ~/lulu`, `git pull`, then it's running in a tmux session, so attach to that with `tmux attach-session` or `tmr` (my alias), then Ctrl-C it, re-run `./lulu.sh`, and abandon the bot to itself with 'Ctrl-B D' into tmux.
