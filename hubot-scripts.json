@@ -1,10 +1,17 @@
 [
+	"announce.coffee",
+	"bang-bang.coffee",
+	"base64.coffee",
 	"botsnack.coffee",
+	"brb.coffee",
 	"coin.coffee",
 	"commitmessage.coffee",
 	"days_since.coffee",
 	"decide.coffee",
+	"decide.coffee",
+	"dnsimple.coffee",
 	"kittens.coffee",
 	"lmgtfy.coffee",
+	"uptime.coffee",
 	"xkcd.coffee"
 ]
