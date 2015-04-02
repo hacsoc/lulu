@@ -15,16 +15,17 @@
   },
 
   "dependencies": {
-    "hubot": ">=2.4.6",
-    "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
-    "optparse": "1.0.3",
-    "hubot-irc": ">= 0.1.9",
-    "soupselect": ">= 0.2.0",
     "htmlparser": ">= 1.7.6",
+    "hubot-irc": ">= 0.1.9",
+    "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
+    "hubot-tell": "*",
+    "hubot": ">=2.5.1",
     "jsdom": ">= 0.2.14",
-    "xml2js": ">= 0",
-    "ntwitter": ">= 0.5.0", //required by the hubot-scripts
     "mathjs": ">= 1.5.0", //for 'lulu math me ...'
+    "ntwitter": ">= 0.5.0", //required by the hubot-scripts
+    "optparse": "1.0.3",
+    "soupselect": ">= 0.2.0",
+    "xml2js": ">= 0",
   },
 
   "engines": {
