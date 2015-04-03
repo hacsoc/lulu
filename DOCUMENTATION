@@ -1,9 +1,15 @@
-while su'd as ircbots
-cd into lulu
-run ./lulu.sh
-
 It might be a good idea to autorun it in crontab or something
 Right now its running inside of a tmux session (type tmr to connect to it)
 
-Deploy:
-`sudo su ircbots`, `cd ~/lulu`, `git pull`, then it's running in a tmux session, so attach to that with `tmux attach-session` or `tmr` (my alias), then Ctrl-C it, re-run `./lulu.sh`, and abandon the bot to itself with 'Ctrl-B D' into tmux.
+Deploy Process
+	`sudo su ircbots`
+	`cd ~/lulu/`
+	`git pull`
+	`tmux attach-session` or `tmr`
+	> Ctrl-C (kill current hubot instance)
+	`~/lulu.sh`
+	> Ctrl-B D (detach from tmux instance)
+
+The startup script lives in /home/ircbots/ because it contains the environment variables for token+username/password service auth.
+
+If the tmux session is killed by excessive Ctrl-C, then restart it with `tmux` before running the startup script and detaching from tmux.
