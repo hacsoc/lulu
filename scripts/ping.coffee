@@ -16,7 +16,3 @@ module.exports = (robot) ->
 
   robot.respond /TIME$/i, (msg) ->
     msg.send "Server time is: #{new Date()}"
-
-  robot.respond /DIE$/i, (msg) ->
-    msg.send "If you strike me down, I shall become more powerful than you can possibly imagine."
-    process.exit 0
