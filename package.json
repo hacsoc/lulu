@@ -1,26 +1,26 @@
 {
-  "name":        "hosted-hubot",
-  "version":     "2.4.6",
-  "author":      "GitHub Inc.",
-  "keywords":    "github hubot campfire bot",
+  "name": "hosted-hubot",
+  "version": "2.4.6",
+  "author": "GitHub Inc.",
+  "keywords": "github hubot campfire bot",
   "description": "A simple helpful Robot for your Company",
-  "licenses":     [{
-    "type":       "MIT",
-    "url":        "http://github.com/github/hubot/raw/master/LICENSE"
-  }],
-
-  "repository" : {
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/github/hubot/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
     "type": "git",
-    "url":  "https://github.com/github/hubot.git"
+    "url": "https://github.com/github/hubot.git"
   },
-
   "dependencies": {
-    "htmlparser": ">= 1.7.6",
+    "htmlparser": "1.7.6",
+    "hubot": ">=2.5.1",
+    "hubot-google-translate": ">=0.1.0",
     "hubot-irc": ">= 0.1.9",
     "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
     "hubot-tell": "*",
-    "hubot": ">=2.5.1",
-    "htmlparser": "1.7.6",
     "jsdom": ">= 0.2.14",
     "mathjs": ">= 1.5.0",
     "ntwitter": ">= 0.5.0",
@@ -28,7 +28,6 @@
     "soupselect": ">= 0.2.0",
     "xml2js": ">= 0"
   },
-
   "engines": {
     "node": ">= 0.8.x",
     "npm": "1.1.x"
