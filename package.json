@@ -15,21 +15,22 @@
     "url": "https://github.com/github/hubot.git"
   },
   "dependencies": {
-    "htmlparser": "1.7.6",
-    "hubot": ">=2.5.1",
-    "hubot-google-translate": ">=0.1.0",
+    "htmlparser": ">= 1.7.6",
+    "hubot": ">= 2.5.1",
+    "hubot-google-translate": ">= 0.2.0",
     "hubot-irc": ">= 0.1.9",
     "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
     "hubot-tell": "*",
-    "jsdom": ">= 0.2.14",
+    "jsdom": "< 4.0.0",
     "mathjs": ">= 1.5.0",
     "ntwitter": ">= 0.5.0",
-    "optparse": "1.0.3",
+    "optparse": ">= 1.0.3",
+    "qs": "~2.3.3",
     "soupselect": ">= 0.2.0",
     "xml2js": ">= 0"
   },
   "engines": {
-    "node": ">= 0.8.x",
-    "npm": "1.1.x"
+  	"iojs": ">= 2.0.0",
+    "npm": ">= 1.1"
   }
 }
