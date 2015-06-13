@@ -12,7 +12,7 @@ module.exports = (robot) ->
 
   robot.hear /fuck/i, (msg) ->
     fucks = (msg.message.text.match(/fuck/i) || []).length;
-    user = msg.message.user.fucks
+    user = msg.message.user.name
     fuck_dict = robot.brain.get 'fucks'
     fuck_dict = {} if not fuck_dict
     old_fucks = fuck_dict[user]
