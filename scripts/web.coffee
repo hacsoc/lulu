@@ -32,7 +32,7 @@ module.exports = (robot) ->
     httpResponse = (url) ->
       msg
         .http(url)
-        .headers('User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13')
+        .headers('User-Agent': 'Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/20100101 Firefox/36.0')
         .get() (err, res, body) ->
           if res.statusCode is 301 or res.statusCode is 302
             httpResponse(res.headers.location)
