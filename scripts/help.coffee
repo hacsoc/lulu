@@ -1,8 +1,8 @@
-# Description: 
+# Description:
 #   Generates help commands for Hubot.
 #
 # Commands:
-#   hubot help - Displays all of the help commands that Hubot knows about.
+#   hubot help - Send a link to all of hubot's commands.
 #   hubot help <query> - Displays all help commands that match <query>.
 #
 # URLS:
@@ -52,23 +52,25 @@ helpContents = (name, commands) ->
 
 module.exports = (robot) ->
   robot.respond /help\s*(.*)?$/i, (msg) ->
-    cmds = robot.helpCommands()
 
     if msg.match[1]
+      # When given a command to ask about, perform the old behavior and list
+      # help for all matching commands in a query.
+      cmds = robot.helpCommands()
       cmds = cmds.filter (cmd) ->
         cmd.match new RegExp(msg.match[1], 'i')
+      emit = cmds.join "\n"
+      unless robot.name.toLowerCase() is 'hubot'
+        emit = emit.replace /hubot/ig, robot.name
+      # this hack makes lulu respond directly, instead of in the room
+      delete msg.message.user.room
+      msg.send emit
 
-    emit = cmds.join "\n"
-
-    unless robot.name.toLowerCase() is 'hubot'
-      emit = emit.replace /hubot/ig, robot.name
-
-    msg.reply "You're asking for it"
-
-    # this hack makes lulu respond directly, instead of in the room
-    delete msg.message.user.room
-
-    msg.send emit
+    else
+      # When there is no command asked about, just tell the room where to find
+      # lulu's command listing, instead of exceeding the server's flood limit
+      # attempting to send a command listing.
+      msg.send "View my command list here: https://github.com/cwruacm/lulu/blob/master/commands.md"
 
   robot.router.get '/hubot/help', (req, res) ->
     cmds = robot.helpCommands()
