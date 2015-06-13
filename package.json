@@ -19,6 +19,7 @@
     "hubot": ">= 2.5.1",
     "hubot-google-translate": ">= 0.2.0",
     "hubot-irc": ">= 0.1.9",
+    "hubot-redis-brain": ">= 0",
     "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
     "hubot-shipit": "^0.2.0",
     "hubot-tell": "*",
