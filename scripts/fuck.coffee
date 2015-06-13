@@ -3,10 +3,10 @@
 #
 # Commands:
 #   hubot how many fucks?
-#   hubot how many fucks has <user> said?
+#   hubot how many fucks has <user> given?
 #
 # Examples:
-#   hubot how many fucks has mason said?
+#   hubot how many fucks does mason give?
 
 fuck_dict = {}
 
@@ -20,13 +20,14 @@ module.exports = (robot) ->
     old_fucks += fucks
     fuck_dict[user] = old_fucks
 
-  robot.respond /how many fucks has @?([\w .\-]+) said\?*$/i, (msg) ->
-    name = msg.match[1].trim()
+  robot.respond /how many fucks (has|does) @?([\w .\-]+) (said|given|give)\?*$/i, (msg) ->
+    name = msg.match[2].trim()
     if fuck_dict[name]?
-      msg.send "#{name} has said fuck #{fuck_dict[name]} times."
+      msg.send "#{name} has given #{fuck_dict[name]} fuck(s)."
     else
-      msg.send "I haven't heard #{name} say fuck yet."
+      msg.send "#{name} doesn't give a fuck."
 
   robot.respond /how many fucks\?*$/i, (msg) ->
     for name, fucks of fuck_dict
-      msg.send "#{name} has said fuck #{fucks} times."
+      msg.send "#{name} has given #{fucks} fuck(s)."
+      
