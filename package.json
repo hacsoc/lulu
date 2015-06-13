@@ -20,6 +20,7 @@
     "hubot-google-translate": ">= 0.2.0",
     "hubot-irc": ">= 0.1.9",
     "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
+    "hubot-shipit": "^0.2.0",
     "hubot-tell": "*",
     "jsdom": "< 4.0.0",
     "mathjs": ">= 1.5.0",
@@ -30,7 +31,7 @@
     "xml2js": ">= 0"
   },
   "engines": {
-  	"iojs": ">= 2.0.0",
+    "iojs": ">= 2.0.0",
     "npm": ">= 1.1"
   }
 }
