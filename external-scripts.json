@@ -1,4 +1,5 @@
 [
 	"hubot-google-translate",
-	"hubot-tell"
+	"hubot-tell",
+	"hubot-shipit"
 ]
