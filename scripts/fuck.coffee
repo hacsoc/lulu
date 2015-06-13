@@ -30,4 +30,3 @@ module.exports = (robot) ->
   robot.respond /how many fucks\?*$/i, (msg) ->
     for name, fucks of fuck_dict
       msg.send "#{name} has given #{fucks} fuck(s)."
-      
