@@ -56,8 +56,8 @@ include running it as:
 
 ## hubot-scripts
 
-With the split legacy/current availability of scripts for hubot, lulu makes
-use of both the current [external-scripts][external-scripts] and the legacy-
+With the dual legacy availability of scripts for hubot, lulu makes use of both
+the now-deprecated [external-scripts][external-scripts] and the legacy-
 but-available [hubot-scripts][hubot-scripts]. Any bugs in these scripts should
 be properly reported to the appropriate maintainer (if none exists, why not take
 over? Easy, right? >.>).
@@ -66,16 +66,13 @@ To enable scripts from the hubot-scripts package, add the script name with
 extension as a double quoted string to the `hubot-scripts.json` file in this
 repo. Similarly, to add scripts from the hubot-scripts *project*, add the script
 name with*out* extension as a double quoted string to the
-`external-scripts.json` file in this repo.
+`external-scripts.json` file in this repo. See the next section for further
+information about using external scripts.
 
 [hubot-scripts]: https://github.com/github/hubot-scripts
 [external-scripts]: https://github.com/hubot-scripts/
 
 ## external-scripts
-
-Tired of waiting for your script to be merged into `hubot-scripts`? Want to
-maintain the repository and package yourself? Then this added functionality
-maybe for you!
 
 Hubot is now able to load scripts from third-party `npm` packages! To enable
 this functionality you can follow the following steps.
@@ -85,6 +82,9 @@ this functionality you can follow the following steps.
 
 To enable third-party scripts that you've added you will need to add the package
 name as a double quoted string to the `external-scripts.json` file in this repo.
+
+Any new scripts that you want to make generally available should be implemented
+as independent repositories that are connected to `npm`.
 
 ## Deployment
 
