@@ -21,47 +21,23 @@ environment variable.
 For the lulu implementation, it is recommended to run it with `--disable-httpd`
 since irc.case.edu is a public-facing server.
 
-### Redis
+##  Persistence
 
-If you are going to use the `redis-brain.coffee` script from `hubot-scripts`
-you will need to add the Redis to Go addon on Heroku which requires a verified
-account or you can create an account at [Redis to Go][redistogo] and manually
-set the `REDISTOGO_URL` variable.
+The `hubot-redis-brain` package is currently activated for lulu. This requires
+an implementation of Redis in some way or another and the appropriate configuration. For further information, see [hubot-retis-brain doc](https://www.npmjs.com/package/hubot-redis-brain).
 
-    % heroku config:add REDISTOGO_URL="..."
-
-If you don't require any persistence feel free to remove the
-`redis-brain.coffee` from `hubot-scripts.json` and you don't need to worry
-about redis at all.
-
-[redistogo]: https://redistogo.com/
-
-### Testing Hubot Locally
+## Testing Hubot Locally
 
 You can test your hubot by running the following.
 
     % bin/hubot
 
 You'll see some start up output about where your scripts come from and a
-prompt.
+prompt. Some status or error messages are expected if environment variables
+are not fully configured.
 
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading adapter shell
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/scripts
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/src/scripts
-    Hubot>
-
-Then you can interact with hubot by typing `hubot help`.
-
-    Hubot> hubot help
-
-    Hubot> animate me <query> - The same thing as `image me`, except adds a few
-    convert me <expression> to <units> - Convert expression to given units.
-    help - Displays all of the help commands that Hubot knows about.
-    ...
-
-Take a look at the scripts in the `./scripts` folder for examples.
-Delete any scripts you think are silly.  Add whatever functionality you
-want hubot to have.
+Then you can interact with hubot by typing `hubot help`. This may have a very
+long output due to the number of scripts installed.
 
 ## Adapters
 
