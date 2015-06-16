@@ -18,17 +18,8 @@ those dependencies are provided by [npm][npmjs].
 Hubot has a HTTP listener which listens on the port specified by the `PORT`
 environment variable.
 
-You can specify routes to listen on in your scripts by using the `router`
-property on `robot`.
-
-```coffeescript
-module.exports = (robot) ->
-  robot.router.get "/hubot/version", (req, res) ->
-    res.end robot.version
-```
-
-There are functions for GET, POST, PUT and DELETE, which all take a route and
-callback function that accepts a request and a response.
+For the lulu implementation, it is recommended to run it with `--disable-httpd`
+since irc.case.edu is a public-facing server.
 
 ### Redis
 
