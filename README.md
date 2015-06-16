@@ -88,59 +88,23 @@ as independent repositories that are connected to `npm`.
 
 ## Deployment
 
-    % heroku create --stack cedar
-    % git push heroku master
-    % heroku ps:scale app=1
+Check `DOCUMENTATION` for information on deploying lulu. This generally will
+require setting the appropriate environment variables before running `bin/hubot`
+with any appropriate parameters.
 
-If your Heroku account has been verified you can run the following to enable
-and add the Redis to Go addon to your app.
+### Expected Environment Variables
 
-    % heroku addons:add redistogo:nano
+Deploying lulu currently expects the following environment variables to be set.
+This should be done by the un-committed script with requisite
+keys/passwords/tokens that lives on irc.case.edu.
 
-If you run into any problems, checkout Heroku's [docs][heroku-node-docs].
-
-You'll need to edit the `Procfile` to set the name of your hubot.
-
-More detailed documentation can be found on the
-[deploying hubot onto Heroku][deploy-heroku] wiki page.
-
-### Deploying to UNIX or Windows
-
-If you would like to deploy to either a UNIX operating system or Windows.
-Please check out the [deploying hubot onto UNIX][deploy-unix] and
-[deploying hubot onto Windows][deploy-windows] wiki pages.
-
-[heroku-node-docs]: http://devcenter.heroku.com/articles/node-js
-[deploy-heroku]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku
-[deploy-unix]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-UNIX
-[deploy-windows]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Windows
-
-## Campfire Variables
-
-If you are using the Campfire adapter you will need to set some environment
-variables. Refer to the documentation for other adapters and the configuraiton
-of those, links to the adapters can be found on the [hubot wiki][hubot-wiki].
-
-Create a separate Campfire user for your bot and get their token from the web
-UI.
-
-    % heroku config:add HUBOT_CAMPFIRE_TOKEN="..."
-
-Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42` 
-and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ROOMS="42,1024"
-
-Add the subdomain hubot should connect to. If you web URL looks like
-`http://mysubdomain.campfirenow.com` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
-
-[hubot-wiki]: https://github.com/github/hubot/wiki
-
-## Restart the bot
-
-You may want to get comfortable with `heroku logs` and `heroku restart`
-if you're having issues.
+- `HUBOT_HOME`
+- `HUBOT_IRC_NICK`
+- `HUBOT_IRC_ROOMS`
+- `HUBOT_IRC_SERVER`
+- `HUBOT_REDMINE_BASE_URL`
+- `HUBOT_REDMINE_TOKEN`
+- `REDIS_URL`
+- `NAMER_NAME`
+- `NAMER_NICK`
 
