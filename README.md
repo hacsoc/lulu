@@ -1,10 +1,10 @@
-# Hubot
+# lulu
 
-This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
+This is an instance of GitHub's Campfire bot, hubot. It's pretty cool.
 
-This version is designed to be deployed on [Heroku][heroku].
+This instance is deployed on the [ACM IRC Server][acmirc] for our IRC uses.
 
-[heroku]: http://www.heroku.com
+[acmirc]: http://irc.case.edu
 
 ## Playing with Hubot
 
