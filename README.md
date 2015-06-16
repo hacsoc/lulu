@@ -39,23 +39,18 @@ are not fully configured.
 Then you can interact with hubot by typing `hubot help`. This may have a very
 long output due to the number of scripts installed.
 
-## Adapters
+## Adapter: IRC
 
 Adapters are the interface to the service you want your hubot to run on. This
 can be something like Campfire or IRC. There are a number of third party
 adapters that the community have contributed. Check the
 [hubot wiki][hubot-wiki] for the available ones.
 
-If you would like to run a non-Campfire or shell adapter you will need to add
-the adapter package as a dependency to the `package.json` file in the
-`dependencies` section.
+As our IRC bot, lulu expects to be run with the IRC adapter as listed in
+`package.json` under the dependencies. Part of lulu's run script should
+include running it as:
 
-Once you've added the dependency and run `npm install` to install it you can
-then run hubot with the adapter.
-
-    % bin/hubot -a <adapter>
-
-Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
+    % bin/hubot -a irc [... other options]
 
 [hubot-wiki]: https://github.com/github/hubot/wiki
 
