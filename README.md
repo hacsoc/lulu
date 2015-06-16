@@ -56,15 +56,20 @@ include running it as:
 
 ## hubot-scripts
 
-There will inevitably be functionality that everyone will want. Instead
-of adding it to hubot itself, you can submit pull requests to
-[hubot-scripts][hubot-scripts].
+With the split legacy/current availability of scripts for hubot, lulu makes
+use of both the current [external-scripts][external-scripts] and the legacy-
+but-available [hubot-scripts][hubot-scripts]. Any bugs in these scripts should
+be properly reported to the appropriate maintainer (if none exists, why not take
+over? Easy, right? >.>).
 
 To enable scripts from the hubot-scripts package, add the script name with
 extension as a double quoted string to the `hubot-scripts.json` file in this
-repo.
+repo. Similarly, to add scripts from the hubot-scripts *project*, add the script
+name with*out* extension as a double quoted string to the
+`external-scripts.json` file in this repo.
 
 [hubot-scripts]: https://github.com/github/hubot-scripts
+[external-scripts]: https://github.com/hubot-scripts/
 
 ## external-scripts
 
