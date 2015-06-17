@@ -83,6 +83,12 @@ this functionality you can follow the following steps.
 1. Add the packages as dependencies into your `package.json`
 2. `npm install` to make sure those packages are installed
 
+Optionally, you can skip automatically managing the dependencies and manage the
+correct dependencies using `npm install --user [package-name]`. However, any
+changes being submitted to this repository should have the dependencies
+correctly added to `package.json` (in particular if there are version
+restrictions on the dependency).
+
 To enable third-party scripts that you've added you will need to add the package
 name as a double quoted string to the `external-scripts.json` file in this repo.
 
