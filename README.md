@@ -26,6 +26,9 @@ since irc.case.edu is a public-facing server.
 The `hubot-redis-brain` package is currently activated for lulu. This requires
 an implementation of Redis in some way or another and the appropriate configuration. For further information, see [hubot-retis-brain doc](https://www.npmjs.com/package/hubot-redis-brain).
 
+For remote redis, the URL must be formatted as `redis://:password@address.com:port/prefix`
+by experimental testing. Note the unexpected additional `:`.
+
 ## Testing Hubot Locally
 
 You can test your hubot by running the following.
@@ -104,7 +107,7 @@ keys/passwords/tokens that lives on irc.case.edu.
 - `HUBOT_IRC_SERVER`
 - `HUBOT_REDMINE_BASE_URL`
 - `HUBOT_REDMINE_TOKEN`
-- `REDIS_URL`
+- `REDIS_URL` (optional if hosted at `localhost:6379` relative to lulu)
 - `NAMER_NAME`
 - `NAMER_NICK`
 
