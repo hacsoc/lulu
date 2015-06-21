@@ -1,5 +1,7 @@
 # lulu
 
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-case-western-reserve.svg)](http://forthebadge.com)
+
 This is an instance of GitHub's Campfire bot, hubot. It's pretty cool.
 
 This instance is deployed on the [ACM IRC Server][acmirc] for our IRC uses.
