@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+# usage: ./hubottest "hubot help"
+log_user 0
+spawn bin/hubot -n lulu
+sleep 3
+expect "Hubot>"
+log_user 1
+send "lulu [lindex $argv 0]\n"
+expect eo
