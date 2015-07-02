@@ -2,9 +2,7 @@
 # usage: ./hubottest "hubot help"
 log_user 0
 spawn bin/hubot -n lulu
-sleep 10
-#expect "lulu>"
-#send "hi\n"
+sleep 15
 expect "lulu>"
 log_user 1
 send "lulu [lindex $argv 0]\n"
