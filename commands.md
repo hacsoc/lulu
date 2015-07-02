@@ -29,7 +29,7 @@ lulu decide <option1> <option2> <option3> - Randomly picks an option
 lulu die - End lulu process
 lulu echo <text> - Reply back with <text>
 lulu gem whois <gemname> - returns gem details if it exists
-lulu help - Displays all of the help commands that Lulu knows about.
+lulu help - Send a link to all of lulu's commands.
 lulu help <query> - Displays all help commands that match <query>.
 lulu how long since <event>? - Display the number of days since the event
 lulu how many fucks has <user> given?
