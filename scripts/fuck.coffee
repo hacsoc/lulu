@@ -34,5 +34,10 @@ module.exports = (robot) ->
   robot.respond /how many fucks\?*$/i, (msg) ->
     fuck_dict = robot.brain.get 'fucks'
     fuck_dict = {} if not fuck_dict
-    for name, fucks of fuck_dict
-      msg.send "#{name} has given #{fucks} fuck(s)."
+    fuck_list = ([name, fucks] for name, fucks of fuck_dict)
+    fuck_list.sort((t1, t2) -> t2[1] - t1[1])
+    for tuple in fuck_list
+      if tuple[1] == 1
+        msg.send "#{tuple[0]} has given #{tuple[1]} fuck"
+      else
+        msg.send "#{tuple[0]} has given #{tuple[1]} fucks"
