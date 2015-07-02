@@ -36,6 +36,7 @@ module.exports = (robot) ->
     fuck_dict = {} if not fuck_dict
     fuck_list = ([name, fucks] for name, fucks of fuck_dict)
     fuck_list.sort((t1, t2) -> t2[1] - t1[1])
+    fuck_list = fuck_list[..5]
     for tuple in fuck_list
       if tuple[1] == 1
         msg.send "#{tuple[0]} has given #{tuple[1]} fuck"
