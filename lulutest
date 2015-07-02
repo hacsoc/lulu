@@ -1,9 +1,17 @@
 #!/usr/bin/expect -f
-# usage: ./hubottest "hubot help"
+# usage: ./lulutest "help .*"
+
+# Disable output!
 log_user 0
+# Start lulu
 spawn bin/hubot -n lulu
+# Wait an obnoxiously long time until we're sure it's loaded (stupid node).
 sleep 15
+# We should get a lulu> prompt.
 expect "lulu>"
+# Enable output again.
 log_user 1
+# Send the first argument to lulu as a command.
 send "lulu [lindex $argv 0]\n"
+# Then wait until lulu's output ends.
 expect eof
