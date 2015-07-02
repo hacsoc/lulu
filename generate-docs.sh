@@ -3,7 +3,12 @@
 # This script will automatically save Hubot's help command output to a file, and
 # then stick it into the appropriate place in the gh-pages branch.  Finally, it
 # will leave the gh-pages branch ready to commit (but it won't commit, cause
-# that would be rude).
+# that would be rude).  You need to have:
+# - expect: a program that interacts with CLIs
+# - GNU coreutils - tac, sed: I'm pretty sure I use some non-standard features.
+#   Probably won't work if you're using a Mac!  Get Linux!
+# Run the command with a clean directory.  If it removes some normal
+# documentation, you may need to adjust the sleep time in lulutest.
 
 # exit on error!
 set -e
