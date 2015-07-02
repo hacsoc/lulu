@@ -38,7 +38,7 @@ grep -v hubot-redis-brain external-scripts.json.bak \
 
 # Restore the old version of external-scripts.json
 mv external-scripts.json.bak external-scripts.json
-exit
+
 # Switch to the github pages branch and put the commands into place.
 git checkout gh-pages
 mv output.txt _includes/commands.txt
