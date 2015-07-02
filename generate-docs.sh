@@ -23,7 +23,9 @@ fi
 
 # Comment out the hubot-redis-brain plugin.  Its output is unpredictable and
 # annoying.
-sed -e '/hubot-redis-brain/s/^/\/\//' external-scripts.json -i.bak
+mv external-scripts.json external-scripts.json.bak
+grep -v hubot-redis-brain external-scripts.json.bak \
+     > external-scripts.json
 
 # Capture lulu's help output with a helper script.
 ./lulutest "help .*" |\
