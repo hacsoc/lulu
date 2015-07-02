@@ -4,3 +4,4 @@ node_modules
 .hubot_history
 .editorconfig
 npm-debug.log
+_site
