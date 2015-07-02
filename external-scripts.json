@@ -2,5 +2,6 @@
 	"hubot-google-translate",
 	"hubot-tell",
 	"hubot-shipit",
-	"hubot-redis-brain"
+	"hubot-redis-brain",
+	"hubot-youtube"
 ]

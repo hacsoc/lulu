@@ -1,10 +1,12 @@
-# Hubot
+# lulu
 
-This is a version of GitHub's Campfire bot, hubot. He's pretty cool.
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-case-western-reserve.svg)](http://forthebadge.com)
 
-This version is designed to be deployed on [Heroku][heroku].
+This is an instance of GitHub's Campfire bot, hubot. It's pretty cool.
 
-[heroku]: http://www.heroku.com
+This instance is deployed on the [ACM IRC Server][acmirc] for our IRC uses.
+
+[acmirc]: http://irc.case.edu
 
 ## Playing with Hubot
 
@@ -18,97 +20,64 @@ those dependencies are provided by [npm][npmjs].
 Hubot has a HTTP listener which listens on the port specified by the `PORT`
 environment variable.
 
-You can specify routes to listen on in your scripts by using the `router`
-property on `robot`.
+For the lulu implementation, it is recommended to run it with `--disable-httpd`
+since irc.case.edu is a public-facing server.
 
-```coffeescript
-module.exports = (robot) ->
-  robot.router.get "/hubot/version", (req, res) ->
-    res.end robot.version
-```
+##  Persistence
 
-There are functions for GET, POST, PUT and DELETE, which all take a route and
-callback function that accepts a request and a response.
+The `hubot-redis-brain` package is currently activated for lulu. This requires
+an implementation of Redis in some way or another and the appropriate configuration. For further information, see [hubot-redis-brain doc](https://www.npmjs.com/package/hubot-redis-brain).
 
-### Redis
+For remote redis, the URL must be formatted as `redis://:password@address.com:port/prefix`
+by experimental testing. Note the unexpected additional `:`.
 
-If you are going to use the `redis-brain.coffee` script from `hubot-scripts`
-you will need to add the Redis to Go addon on Heroku which requires a verified
-account or you can create an account at [Redis to Go][redistogo] and manually
-set the `REDISTOGO_URL` variable.
-
-    % heroku config:add REDISTOGO_URL="..."
-
-If you don't require any persistence feel free to remove the
-`redis-brain.coffee` from `hubot-scripts.json` and you don't need to worry
-about redis at all.
-
-[redistogo]: https://redistogo.com/
-
-### Testing Hubot Locally
+## Testing Hubot Locally
 
 You can test your hubot by running the following.
 
     % bin/hubot
 
 You'll see some start up output about where your scripts come from and a
-prompt.
+prompt. Some status or error messages are expected if environment variables
+are not fully configured.
 
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading adapter shell
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/scripts
-    [Sun, 04 Dec 2011 18:41:11 GMT] INFO Loading scripts from /home/tomb/Development/hubot/src/scripts
-    Hubot>
+Then you can interact with hubot by typing `hubot help`. This may have a very
+long output due to the number of scripts installed.
 
-Then you can interact with hubot by typing `hubot help`.
-
-    Hubot> hubot help
-
-    Hubot> animate me <query> - The same thing as `image me`, except adds a few
-    convert me <expression> to <units> - Convert expression to given units.
-    help - Displays all of the help commands that Hubot knows about.
-    ...
-
-Take a look at the scripts in the `./scripts` folder for examples.
-Delete any scripts you think are silly.  Add whatever functionality you
-want hubot to have.
-
-## Adapters
+## Adapter: IRC
 
 Adapters are the interface to the service you want your hubot to run on. This
 can be something like Campfire or IRC. There are a number of third party
 adapters that the community have contributed. Check the
 [hubot wiki][hubot-wiki] for the available ones.
 
-If you would like to run a non-Campfire or shell adapter you will need to add
-the adapter package as a dependency to the `package.json` file in the
-`dependencies` section.
+As our IRC bot, lulu expects to be run with the IRC adapter as listed in
+`package.json` under the dependencies. Part of lulu's run script should
+include running it as:
 
-Once you've added the dependency and run `npm install` to install it you can
-then run hubot with the adapter.
-
-    % bin/hubot -a <adapter>
-
-Where `<adapter>` is the name of your adapter without the `hubot-` prefix.
+    % bin/hubot -a irc [... other options]
 
 [hubot-wiki]: https://github.com/github/hubot/wiki
 
 ## hubot-scripts
 
-There will inevitably be functionality that everyone will want. Instead
-of adding it to hubot itself, you can submit pull requests to
-[hubot-scripts][hubot-scripts].
+With the dual legacy availability of scripts for hubot, lulu makes use of both
+the now-deprecated [external-scripts][external-scripts] and the legacy-
+but-available [hubot-scripts][hubot-scripts]. Any bugs in these scripts should
+be properly reported to the appropriate maintainer (if none exists, why not take
+over? Easy, right? >.>).
 
 To enable scripts from the hubot-scripts package, add the script name with
 extension as a double quoted string to the `hubot-scripts.json` file in this
-repo.
+repo. Similarly, to add scripts from the hubot-scripts *project*, add the script
+name with*out* extension as a double quoted string to the
+`external-scripts.json` file in this repo. See the next section for further
+information about using external scripts.
 
 [hubot-scripts]: https://github.com/github/hubot-scripts
+[external-scripts]: https://github.com/hubot-scripts/
 
 ## external-scripts
-
-Tired of waiting for your script to be merged into `hubot-scripts`? Want to
-maintain the repository and package yourself? Then this added functionality
-maybe for you!
 
 Hubot is now able to load scripts from third-party `npm` packages! To enable
 this functionality you can follow the following steps.
@@ -116,64 +85,38 @@ this functionality you can follow the following steps.
 1. Add the packages as dependencies into your `package.json`
 2. `npm install` to make sure those packages are installed
 
+More easily, you can skip manually managing the dependency list and manage the
+correct dependencies using `npm install --save [package-name]`. This will update
+`package.json` for you. However, if there are version restrictions on the
+dependency you are adding, be sure to update the `package.json` to reflect the
+requirement.
+
 To enable third-party scripts that you've added you will need to add the package
 name as a double quoted string to the `external-scripts.json` file in this repo.
 
+Any new scripts that you want to make generally available should be implemented
+as independent repositories that are connected to `npm`.
+
 ## Deployment
 
-    % heroku create --stack cedar
-    % git push heroku master
-    % heroku ps:scale app=1
+Check `DOCUMENTATION` for information on deploying lulu. This generally will
+require setting the appropriate environment variables before running `bin/hubot`
+with any appropriate parameters.
 
-If your Heroku account has been verified you can run the following to enable
-and add the Redis to Go addon to your app.
+### Expected Environment Variables
 
-    % heroku addons:add redistogo:nano
+Deploying lulu currently expects the following environment variables to be set.
+This should be done by the un-committed script with requisite
+keys/passwords/tokens that lives on irc.case.edu.
 
-If you run into any problems, checkout Heroku's [docs][heroku-node-docs].
-
-You'll need to edit the `Procfile` to set the name of your hubot.
-
-More detailed documentation can be found on the
-[deploying hubot onto Heroku][deploy-heroku] wiki page.
-
-### Deploying to UNIX or Windows
-
-If you would like to deploy to either a UNIX operating system or Windows.
-Please check out the [deploying hubot onto UNIX][deploy-unix] and
-[deploying hubot onto Windows][deploy-windows] wiki pages.
-
-[heroku-node-docs]: http://devcenter.heroku.com/articles/node-js
-[deploy-heroku]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Heroku
-[deploy-unix]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-UNIX
-[deploy-windows]: https://github.com/github/hubot/wiki/Deploying-Hubot-onto-Windows
-
-## Campfire Variables
-
-If you are using the Campfire adapter you will need to set some environment
-variables. Refer to the documentation for other adapters and the configuraiton
-of those, links to the adapters can be found on the [hubot wiki][hubot-wiki].
-
-Create a separate Campfire user for your bot and get their token from the web
-UI.
-
-    % heroku config:add HUBOT_CAMPFIRE_TOKEN="..."
-
-Get the numeric IDs of the rooms you want the bot to join, comma delimited. If
-you want the bot to connect to `https://mysubdomain.campfirenow.com/room/42` 
-and `https://mysubdomain.campfirenow.com/room/1024` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ROOMS="42,1024"
-
-Add the subdomain hubot should connect to. If you web URL looks like
-`http://mysubdomain.campfirenow.com` then you'd add it like this:
-
-    % heroku config:add HUBOT_CAMPFIRE_ACCOUNT="mysubdomain"
-
-[hubot-wiki]: https://github.com/github/hubot/wiki
-
-## Restart the bot
-
-You may want to get comfortable with `heroku logs` and `heroku restart`
-if you're having issues.
-
+- `HUBOT_HOME`
+- `HUBOT_IRC_NICK`
+- `HUBOT_IRC_ROOMS`
+- `HUBOT_IRC_SERVER`
+- `HUBOT_REDMINE_BASE_URL`
+- `HUBOT_REDMINE_TOKEN`
+- `HUBOT_YOUTUBE_API_KEY`
+- `HUBOT_YOUTUBE_DETERMINISTIC_RESULTS` (optional flag)
+- `REDIS_URL` (optional if redis is hosted at `localhost:6379` relative to lulu)
+- `NAMER_NAME`
+- `NAMER_NICK`
