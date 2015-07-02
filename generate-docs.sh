@@ -25,8 +25,14 @@ fi
 # annoying.
 sed -e '/hubot-redis-brain/s/^/\/\//' external-scripts.json -i.bak
 
-# Capture lulu's help output with a helper script, and reformat it.
-./lulutest "help .*" | sed -e 1d > output.txt
+# Capture lulu's help output with a helper script.
+./lulutest "help .*" |\
+    # Delete the first line (the help command echoed)
+    sed -e 1d |\
+    # Delete the color codes
+    sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" |\
+    # Do the right line endings.
+    tr -d '\r' > output.txt
 
 # Restore the old version of external-scripts.json
 mv external-scripts.json.bak external-scripts.json
