@@ -33,16 +33,26 @@ by experimental testing. Note the unexpected additional `:`.
 
 ## Testing Hubot Locally
 
-You can test your hubot by running the following.
+To get started with hubot, you will need `node.js` and its associated package
+manager `npn`. Downloading `node.js` [directly][nodedownload] or through your
+favorite package manage, likely as `nodejs` and `npm`.
 
-    % bin/hubot
+Once you have the runtime installed, [fork this repo][forklulu] and clone to
+your development computer. In the root of the repo, run `npm install` to install
+all of the dependencies in `package.json`.
 
-You'll see some start up output about where your scripts come from and a
-prompt. Some status or error messages are expected if environment variables
-are not fully configured.
+With all the dependencies installed, run `bin/hubot` to start shell interaction.
+You'll see some start up output about where your scripts come from and a prompt.
+Some status or error messages are expected if environment variables are not
+fully configured.
 
-Then you can interact with hubot by typing `hubot help`. This may have a very
-long output due to the number of scripts installed.
+Then you can start interacting with hubot by typing anything that may be picked
+up by a listener. Run `hubot help` (the shell will *not* respond to the name
+`lulu`) to see the available commands. This may have a very long output due to
+the number of scripts installed.
+
+[nodedownload]: https://nodejs.org/download/
+[forklulu]: https://github.com/cwruacm/lulu/fork
 
 ## Adapter: IRC
 
