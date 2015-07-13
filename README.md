@@ -47,9 +47,9 @@ Some status or error messages are expected if environment variables are not
 fully configured.
 
 Then you can start interacting with hubot by typing anything that may be picked
-up by a listener. Run `hubot help` (the shell will *not* respond to the name
-`lulu`) to see the available commands. This may have a very long output due to
-the number of scripts installed.
+up by a listener. Run `hubot help .*` (the shell will *not* respond to the name
+`lulu`) to generate a list of available commands. This may have a very long
+output due to the number of scripts installed.
 
 [nodedownload]: https://nodejs.org/download/
 [forklulu]: https://github.com/cwruacm/lulu/fork
