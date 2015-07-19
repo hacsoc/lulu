@@ -34,7 +34,7 @@ by experimental testing. Note the unexpected additional `:`.
 ## Testing Hubot Locally
 
 To get started with hubot, you will need `node.js` and its associated package
-manager `npn`. Downloading `node.js` [directly][nodedownload] or through your
+manager `npm`. Downloading `node.js` [directly][nodedownload] or through your
 favorite package manage, likely as `nodejs` and `npm`.
 
 Once you have the runtime installed, [fork this repo][forklulu] and clone to
