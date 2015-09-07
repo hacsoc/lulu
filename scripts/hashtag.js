@@ -5,6 +5,10 @@
 //   #[any_hashtag] - hears and counts hashtags
 //   hubot hashtags - show top 5 hashtags
 //   hubot hashtag [hashtag] - show how many times a hashtag is used
+//
+// Examples:
+//   I love #tswift!
+//   hubot hashtag tswift
 
 module.exports = function(robot) {
 
