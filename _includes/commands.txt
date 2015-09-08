@@ -1,3 +1,4 @@
+#[any_hashtag] - hears and counts hashtags
 <thing>++ - give thing some karma
 <thing>-- - take away some of thing's karma
 botsnack - give the bot a food
@@ -23,6 +24,8 @@ lulu decide <option1> <option2> <option3> - Randomly picks an option
 lulu die - End lulu process
 lulu echo <text> - Reply back with <text>
 lulu gem whois <gemname> - returns gem details if it exists
+lulu hashtag [hashtag] - show how many times a hashtag is used
+lulu hashtags - show top 5 hashtags
 lulu help - Send a link to all of lulu's commands.
 lulu help <query> - Displays all help commands that match <query>.
 lulu how long since <event>? - Display the number of days since the event
