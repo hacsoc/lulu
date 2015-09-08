@@ -70,7 +70,7 @@ module.exports = (robot) ->
       # When there is no command asked about, just tell the room where to find
       # lulu's command listing, instead of exceeding the server's flood limit
       # attempting to send a command listing.
-      msg.send "View my command list here: http://cwruacm.github.io/lulu"
+      msg.send "View my command list here: http://hacsoc.org/lulu"
 
   robot.router.get '/hubot/help', (req, res) ->
     cmds = robot.helpCommands()
