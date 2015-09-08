@@ -60,5 +60,6 @@ lulu xkcd [latest]- The latest XKCD comic
 lulu xkcd random - XKCD comic <num>
 lulu youtube me <query> - Searches YouTube for the query and returns the video embed link.
 lulu youtube me <query> - Searches YouTube for the query and returns the video embed link.
+join #ieee - lulu will invite you to #ieee
 listens for "who is " followed by the bot name
 ship it - Display a motivation squirrel
