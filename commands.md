@@ -7,7 +7,6 @@ Here is lulu's command listing, which we have hopefully kept up-to-date for you:
 <thing>++ - give thing some karma
 <thing>-- - take away some of thing's karma
 botsnack - give the bot a food
-brb (or afk, or bbl)
 check domain <domainname> - returns whether a domain is available
 lulu !! - Repeat the last command directed at lulu
 lulu (redmine|show) me <issue-id> - Show the issue status
