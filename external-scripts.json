@@ -4,4 +4,5 @@
 	"hubot-shipit",
 	"hubot-redis-brain",
 	"hubot-youtube"
+	"hubot-scripts-stock"
 ]
