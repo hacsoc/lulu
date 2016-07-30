@@ -1,13 +1,9 @@
 lulu help .*
-lulu> #[any_hashtag] - hears and counts hashtags
+[0Jlulu> #[any_hashtag] - hears and counts hashtags
 <thing>++ - give thing some karma
 <thing>-- - take away some of thing's karma
-lulu (redmine|show) me <issue-id> - Show the issue status
 lulu <user> is a badass guitarist - assign a role to a user
 lulu <user> is not a badass guitarist - remove a role from a user
-lulu add <hours> hours to <issue-id> ["comments"] - Adds hours to the issue with the optional comments
-lulu animate me <query> - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
-lulu assign <issue-id> to <user-first-name> ["notes"] - Assign the issue to the user (searches login or firstname)
 lulu base64 encode|decode <query> - Base64 encode or decode <string>
 lulu check domain <domainname> - returns whether a domain is available
 lulu convert me <expression> to <units> - Convert expression to given units.
@@ -21,22 +17,15 @@ lulu help - Send a link to all of lulu's commands.
 lulu help <query> - Displays all help commands that match <query>.
 lulu how many fucks has <user> given?
 lulu how many fucks?
-lulu image me <query> - The Original. Queries Google Images for <query> and returns a random top result.
 lulu karma <thing> - check thing's karma (if <thing> is omitted, show the top 5)
 lulu karma best - show the top 5
 lulu karma worst - show the bottom 5
 lulu kitten me - A randomly selected kitten
 lulu kitten me <w>x<h> - A kitten of the given size
-lulu link me <issue-id> - Returns a link to the redmine issue
-lulu map me <query> - Returns a map view of the area returned by `query`.
 lulu marco - Reply with Polo
 lulu math me <expression> - Calculate the given expression.
-lulu mustache me <query> - Searches Google Images for the specified query and mustaches it.
-lulu mustache me <url> - Adds a mustache to the specified URL.
 lulu ping - Reply with pong
 lulu pug me - Receive a pug
-lulu set <issue-id> to <int>% ["comments"] - Updates an issue and sets the percent done
-lulu show (my|user's) issues - Show your issues or another user's issues
 lulu stock <ticker> - Get a stock price
 lulu stock chart <ticker> [1d|5d|2w|1mon|1y] - Get a stock price and chart
 lulu tell <recipients> <some message> - tell <recipients> <some message> next time they are present.
@@ -45,7 +34,6 @@ lulu throw a coin - Gives you heads or tails
 lulu time - Reply with current time
 lulu translate me <phrase> - Searches for a translation for the <phrase> and then prints that bad boy out.
 lulu translate me from <source> into <target> <phrase> - Translates <phrase> from <source> into <target>. Both <source> and <target> are optional
-lulu update <issue-id> with "<note>" - Adds a note to the issue
 lulu who is <user> - see what roles a user has
 lulu youtube me <query> - Searches YouTube for the query and returns the video embed link.
 lulu youtube me <query> - Searches YouTube for the query and returns the video embed link.
