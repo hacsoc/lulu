@@ -26,6 +26,9 @@ unEntity = (str) ->
     e.innerHTML = str
     if e.childNodes.length == 0 then "" else e.childNodes[0].nodeValue
 
+html_title_length = process.env.HUBOT_WEB_TITLE_LEN or '200'
+html_title_length = parseInt(html_title_length)
+
 module.exports = (robot) ->
   robot.hear /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/i, (msg) ->
     url = msg.match[0]
@@ -51,7 +54,10 @@ module.exports = (robot) ->
               return
 
             processResult = (elem) ->
-                unEntity(elem.children[0].data.replace(/(\r\n|\n|\r)/gm,"").trim().substr(0,137) + "...")
+                ret_var = elem.children[0].data.replace(/(\r\n|\n|\r)/gm,"").trim()
+                if ret_var.length > html_title_length
+                  ret_var = ret_var.substr(0,html_title_length) + "..."
+                unEntity(ret_var)
             if results[0]
               msg.send processResult(results[0])
             else
@@ -71,7 +77,9 @@ module.exports = (robot) ->
           format: "json"
         .get() (err, res, body) ->
           response = JSON.parse body
-          responseTitle = response.data.info[0].title.replace(/(\r\n|\n|\r)/gm,"").trim().substr(0,137) + "..."
+          responseTitle = response.data.info[0].title.replace(/(\r\n|\n|\r)/gm,"").trim()
+          if responseTitle.length > html_title_length
+            responseTitle = responseTitle.substr(0, html_title_length) + "..."
           if responseTitle
             msg.send if response.status_code is 200 then responseTitle else response.status_txt
           else
