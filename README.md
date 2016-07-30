@@ -69,24 +69,6 @@ include running it as:
 
 [hubot-wiki]: https://github.com/github/hubot/wiki
 
-## hubot-scripts
-
-With the dual legacy availability of scripts for hubot, lulu makes use of both
-the now-deprecated [external-scripts][external-scripts] and the legacy-
-but-available [hubot-scripts][hubot-scripts]. Any bugs in these scripts should
-be properly reported to the appropriate maintainer (if none exists, why not take
-over? Easy, right? >.>).
-
-To enable scripts from the hubot-scripts package, add the script name with
-extension as a double quoted string to the `hubot-scripts.json` file in this
-repo. Similarly, to add scripts from the hubot-scripts *project*, add the script
-name with*out* extension as a double quoted string to the
-`external-scripts.json` file in this repo. See the next section for further
-information about using external scripts.
-
-[hubot-scripts]: https://github.com/github/hubot-scripts
-[external-scripts]: https://github.com/hubot-scripts/
-
 ## external-scripts
 
 Hubot is now able to load scripts from third-party `npm` packages! To enable
@@ -130,3 +112,4 @@ keys/passwords/tokens that lives on irc.case.edu.
 - `REDIS_URL` (optional if redis is hosted at `localhost:6379` relative to lulu)
 - `NAMER_NAME`
 - `NAMER_NICK`
+- `HUBOT_WEB_TITLE_LEN` (optional, int for maximum length of web titles. defaults to 200)
