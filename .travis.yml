@@ -12,3 +12,4 @@ install:
   - npm install
 script: ./push.sh
 secure: "jI/jCxgC+H/+oxfQr0T/HDZj9T/uj9rlSmG93n/XF45KHeQDnZaRswFg2B2ZIv4TeJbqwWx0XVOCe/xOBiReZ2EF/tS+KlX5fAyFlmJnSwGfoP3IFhxVEKlAeHc4sl7qbwaCqI7CLF1tTXxJUzlsRnktC3G1AnmHtkx6Al7MH7A="
+
