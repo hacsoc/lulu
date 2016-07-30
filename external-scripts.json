@@ -1,8 +1,10 @@
 [
 	"hubot-coin",
+	"hubot-dnsimple",
 	"hubot-google-translate",
 	"hubot-redis-brain",
 	"hubot-scripts-stock",
+	"hubot-self-uptime",
 	"hubot-shipit",
 	"hubot-tell",
 	"hubot-xkcd",
