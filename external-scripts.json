@@ -1,8 +1,10 @@
 [
+	"hubot-coin",
 	"hubot-google-translate",
-	"hubot-tell",
-	"hubot-shipit",
 	"hubot-redis-brain",
-	"hubot-youtube",
-	"hubot-scripts-stock"
+	"hubot-scripts-stock",
+	"hubot-shipit",
+	"hubot-tell",
+	"hubot-xkcd",
+	"hubot-youtube"
 ]
