@@ -16,15 +16,19 @@
   },
   "dependencies": {
     "htmlparser": ">= 1.7.6",
-    "hubot": ">= 2.5.1",
+    "hubot": ">= 2",
+    "hubot-coin": ">= 0.0.2",
+    "hubot-dnsimple": "= 0.0.3",
     "hubot-google-translate": ">= 0.2.0",
     "hubot-irc": ">= 0.1.9",
     "hubot-redis-brain": ">= 0",
-    "hubot-scripts": "git://github.com/github/hubot-scripts.git#master",
+    "hubot-scripts-stock": "*",
+    "hubot-self-uptime": ">= 0.0.3",
     "hubot-shipit": "^0.2.0",
     "hubot-tell": "*",
+    "hubot-xkcd": ">= 0.0.3",
     "hubot-youtube": ">=1.0.1",
-    "jsdom": "< 4.0.0",
+    "jsdom": ">= 4.0.0",
     "mathjs": ">= 1.5.0",
     "ntwitter": ">= 0.5.0",
     "optparse": ">= 1.0.3",
@@ -34,7 +38,7 @@
     "xml2js": ">= 0"
   },
   "engines": {
-    "iojs": ">= 2.0.0",
+    "nodejs": ">= 4.0.0",
     "npm": ">= 1.1"
   }
 }
