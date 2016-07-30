@@ -105,8 +105,8 @@ keys/passwords/tokens that lives on irc.case.edu.
 - `HUBOT_IRC_NICK`
 - `HUBOT_IRC_ROOMS`
 - `HUBOT_IRC_SERVER`
-- `HUBOT_REDMINE_BASE_URL`
-- `HUBOT_REDMINE_TOKEN`
+- `HUBOT_DNSIMPLE_USERNAME`
+- `HUBOT_DNSIMPLE_API_TOKEN`
 - `HUBOT_YOUTUBE_API_KEY`
 - `HUBOT_YOUTUBE_DETERMINISTIC_RESULTS` (optional flag)
 - `REDIS_URL` (optional if redis is hosted at `localhost:6379` relative to lulu)
