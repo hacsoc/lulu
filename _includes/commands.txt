@@ -1,5 +1,5 @@
 lulu help .*
-[1G[0Jlulu> [7G#[any_hashtag] - hears and counts hashtags
+lulu> #[any_hashtag] - hears and counts hashtags
 <thing>++ - give thing some karma
 <thing>-- - take away some of thing's karma
 lulu (redmine|show) me <issue-id> - Show the issue status
