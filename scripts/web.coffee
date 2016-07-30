@@ -51,7 +51,7 @@ module.exports = (robot) ->
               return
 
             processResult = (elem) ->
-                unEntity(elem.children[0].data.replace(/(\r\n|\n|\r)/gm,"").trim())
+                unEntity(elem.children[0].data.replace(/(\r\n|\n|\r)/gm,"").trim().substr(0,137) + "...")
             if results[0]
               msg.send processResult(results[0])
             else
@@ -71,7 +71,7 @@ module.exports = (robot) ->
           format: "json"
         .get() (err, res, body) ->
           response = JSON.parse body
-          responseTitle = response.data.info[0].title.replace(/(\r\n|\n|\r)/gm,"").trim()
+          responseTitle = response.data.info[0].title.replace(/(\r\n|\n|\r)/gm,"").trim().substr(0,137) + "..."
           if responseTitle
             msg.send if response.status_code is 200 then responseTitle else response.status_txt
           else
