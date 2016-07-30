@@ -1,3 +1,2 @@
-markdown: redcarpet
 exclude:
   - node_modules
