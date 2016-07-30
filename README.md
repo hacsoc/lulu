@@ -130,3 +130,4 @@ keys/passwords/tokens that lives on irc.case.edu.
 - `REDIS_URL` (optional if redis is hosted at `localhost:6379` relative to lulu)
 - `NAMER_NAME`
 - `NAMER_NICK`
+- `HUBOT_WEB_TITLE_LEN` (optional, int for maximum length of web titles. defaults to 200)
