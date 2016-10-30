@@ -15,29 +15,29 @@
     "url": "https://github.com/github/hubot.git"
   },
   "dependencies": {
-    "htmlparser": ">= 1.7.6",
-    "hubot": ">= 2.0",
-    "hubot-coin": ">= 0.0.2",
-    "hubot-google-translate": ">= 0.2.0",
-    "hubot-irc": ">= 0.1.9",
-    "hubot-redis-brain": ">= 0.0.3",
-    "hubot-scripts-stock": ">= 0.2.0",
-    "hubot-self-uptime": ">= 0.0.3",
-    "hubot-shipit": ">= 0.2.0",
-    "hubot-tell": ">= 1.2",
-    "hubot-xkcd": ">= 0.0.3",
-    "hubot-youtube": ">=1.0.1",
-    "jsdom": ">= 4.0.0",
-    "mathjs": ">= 1.5.0",
-    "ntwitter": ">= 0.5.0",
-    "optparse": ">= 1.0.3",
-    "qs": ">= 2.3.3",
-    "redis": "= 0.8.4",
-    "soupselect": ">= 0.2.0",
-    "xml2js": ">= 0"
+    "htmlparser": "~1.7.7",
+    "hubot": "~2.19.0",
+    "hubot-coin": "~0.0.2",
+    "hubot-google-translate": "~0.2.0",
+    "hubot-irc": "~0.2.9",
+    "hubot-redis-brain": "~0.0.3",
+    "hubot-scripts-stock": "~0.2.1",
+    "hubot-self-uptime": "~0.0.3",
+    "hubot-shipit": "~0.2.0",
+    "hubot-tell": "~1.2.4",
+    "hubot-xkcd": "~0.0.3",
+    "hubot-youtube": ">=1.0.2",
+    "jsdom": "~9.8.3",
+    "mathjs": "~3.6.0",
+    "ntwitter": "~0.5.0",
+    "optparse": "~1.0.5",
+    "qs": "~6.3.0",
+    "redis": "~2.6.2",
+    "soupselect": "~0.2.0",
+    "xml2js": "~0.4.17"
   },
   "engines": {
-    "nodejs": ">= 4.0.0",
-    "npm": ">= 1.1"
+    "nodejs": "^6.8.0",
+    "npm": "^2.10.0"
   }
 }

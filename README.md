@@ -2,6 +2,8 @@
 
 [![forthebadge](http://forthebadge.com/images/badges/powered-by-case-western-reserve.svg)](http://forthebadge.com)
 
+[![Dependency Status](https://david-dm.org/hacsoc/lulu.svg)](https://david-dm.org/hacsoc/lulu)
+
 This is an instance of GitHub's Campfire bot, hubot. It's pretty cool.
 
 This instance is deployed on the [ACM IRC Server][acmirc] for our IRC uses.
@@ -113,3 +115,8 @@ keys/passwords/tokens that lives on irc.case.edu.
 - `NAMER_NAME`
 - `NAMER_NICK`
 - `HUBOT_WEB_TITLE_LEN` (optional, int for maximum length of web titles. defaults to 200)
+
+For a full list of environment variables detected that *might* be used, see
+[this][lulu-env] page.
+
+[lulu-env]: http://hacsoc.org/lulu/env.html
